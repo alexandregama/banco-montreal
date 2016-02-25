@@ -8,4 +8,6 @@ public interface Usuarios {
 
 	List<Usuario> listaTodos();
 
+	void remove(Usuario usuario);
+
 }

@@ -27,6 +27,12 @@ public class UsuarioBean {
 		return listaDeUsuarios;
 	}
 
+	public void remove() {
+		System.out.println("Removendo o usuario: " + usuario);
+		usuarios.remove(usuario);
+		listaDeUsuarios = null;
+	}
+	
 	public Usuario getUsuario() {
 		return usuario;
 	}
