@@ -1,5 +1,7 @@
 package br.com.bancomontreal.usuario;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -11,9 +13,18 @@ public class UsuarioBean {
 	
 	private Usuarios usuarios = new HashMapUsuariosDao();
 	
+	private List<Usuario> listaDeUsuarios;
+	
 	public void salva() {
 		usuarios.cadastra(usuario);
 		usuario = new Usuario();
+	}
+	
+	public List<Usuario> getListaDeUsuarios() {
+		if (listaDeUsuarios == null) {
+			listaDeUsuarios = usuarios.listaTodos();
+		}
+		return listaDeUsuarios;
 	}
 
 	public Usuario getUsuario() {

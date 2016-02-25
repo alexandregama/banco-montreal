@@ -1,6 +1,8 @@
 package br.com.bancomontreal.usuario;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class HashMapUsuariosDao implements Usuarios {
@@ -19,6 +21,14 @@ public class HashMapUsuariosDao implements Usuarios {
 		database.put(id, usuario);
 		
 		System.out.println("Usuario cadastrado: " + usuario);
+	}
+
+	@Override
+	public List<Usuario> listaTodos() {
+		List<Usuario> lista = new ArrayList<>();
+		database.keySet().stream().forEach(id -> lista.add(database.get(id)));
+		
+		return lista;
 	}
 
 }

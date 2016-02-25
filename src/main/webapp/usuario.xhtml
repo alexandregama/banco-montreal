@@ -25,6 +25,23 @@
 		
 		<h:commandButton value="Salvar" action="#{usuarioBean.salva}"/>
 	</h:form>
+	
+	<h:form>
+		<h:dataTable value="#{usuarioBean.listaDeUsuarios}" var="usuario">
+			<h:column>
+				<f:facet name="header">Id</f:facet>
+				<h:outputText value="#{usuario.id}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+				<h:outputText value="#{usuario.nome}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Login</f:facet>
+				<h:outputText value="#{usuario.login}"/>
+			</h:column>
+		</h:dataTable>
+	</h:form>
 </h:body>
 
 </html>
